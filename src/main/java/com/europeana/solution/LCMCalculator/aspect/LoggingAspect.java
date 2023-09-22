@@ -19,7 +19,7 @@ public class LoggingAspect {
         String args = Arrays.stream(joinPoint.getArgs())
                 .map(a -> a.toString())
                 .collect(Collectors.joining(","));
-        log.info(joinPoint + " InPut range: " + args);
+        log.info(joinPoint + " InPut: " + args);
     }
 
     @AfterReturning(value = "execution(public long com.europeana.solution.LCMCalculator.service..*(..))", returning = "result")
